@@ -1,4 +1,125 @@
-<a class="btn"
-   href="https://mail.google.com/mail/?view=cm&fs=1&to=cedric.valenciaa@gmail.com&su=Hello%20Cedric&body=Hi%20Cedric%2C%20">
-  Email Me
-</a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cedric Valencia — Resume & Links</title>
+    <meta name="description" content="One‑page resume site for Cedric Valencia: download resume PDF and connect on LinkedIn." />
+    <meta property="og:title" content="Cedric Valencia — Resume & Links" />
+    <meta property="og:description" content="Download Cedric's resume PDF and connect on LinkedIn." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <style>
+      :root {
+        --bg: #0b0d10;
+        --ink: #f3f4f6; /* near-white */
+        --muted: #9ca3af; /* gray-400 */
+        --ring: #2a2f36; /* subtle border */
+        --card: #111418; /* panel bg */
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 6rem 1.25rem 3rem;
+        display: grid;
+        gap: 2rem;
+        min-height: 100dvh;
+        align-content: center;
+      }
+      header { display: grid; gap: .5rem; }
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        margin: 0;
+      }
+      .tag {
+        font-size: .95rem;
+        text-transform: uppercase;
+        letter-spacing: .14em;
+        color: var(--muted);
+      }
+      .card {
+        border: 1px solid var(--ring);
+        background: var(--card);
+        border-radius: 16px;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .75rem;
+      }
+      .blurb { font-size: 1.1rem; }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .75rem;
+        padding-top: .5rem;
+      }
+      .btn {
+        --padx: 1rem; --pady: .8rem;
+        display: inline-flex;
+        align-items: center; justify-content: center;
+        padding: var(--pady) var(--padx);
+        border-radius: 999px;
+        border: 1px solid var(--ring);
+        text-decoration: none;
+        color: var(--ink);
+        font-weight: 600;
+        transition: transform .08s ease, background .2s ease;
+        background: #161a1f;
+      }
+      .btn:hover { transform: translateY(-1px); background: #1c2127; }
+      .btn:active { transform: translateY(0); }
+      .btn.primary { background: #f5f5f5; color: #111; }
+      .btn.primary:hover { background: #ffffff; }
+      .meta { color: var(--muted); font-size: .95rem; }
+      footer { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
+      .grid { display: grid; gap: 1rem; }
+      @media (min-width: 640px) {
+        .card { grid-template-columns: 1fr auto; align-items: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <span class="tag">Pasadena • Los Angeles</span>
+        <h1>Cedric Valencia</h1>
+        <p class="meta">Pasadena City College — Economics/Business Marketing</p>
+      </header>
+
+      <section class="card">
+        <p class="blurb">Hi! I’m a PCC student focused on marketing, business, and economics I built this simple site so you can quickly <strong>download my resume</strong> and find my <strong>LinkedIn</strong>. If you’d like to chat about an internship or a project, I’d love to have a cup of coffee, I know some amazing cafes.</p>
+        <div class="actions">
+          <!-- TODO: replace the href below with your actual PDF path (e.g., ./assets/Cedric-Valencia-Resume.pdf) -->
+          <a class="btn primary" href="./assets/Cedric%20Valencia%20Resume.pdf" download>Download Resume (PDF)</a>
+          <!-- TODO: replace # with your LinkedIn URL, e.g., https://www.linkedin.com/in/your-handle/ -->
+          <a class="btn" href="https://www.linkedin.com/in/cedric-valencia-018967325" target="_blank" rel="noopener">LinkedIn</a>
+          <!-- TODO: replace with your email -->
+          <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=cedric.valenciaa@gmail.com&su=Hello%20Cedric&body=Hi%20Cedric%2C%20">Email Me</a>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Cedric Valencia. Built with HTML & CSS. No cookies, no tracking.
+      </footer>
+    </main>
+
+    <script>
+      // Tiny JS for year stamp only
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
