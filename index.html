@@ -118,9 +118,33 @@
     </main>
 
     <script>
-      // Tiny JS for year stamp only
-      const y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
-    </script>
+  // Year stamp
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // SMS button: opens SMS app on phones; copies number on desktop
+  const smsBtn = document.getElementById('sms-btn');
+  const smsNumber = '+16262527663';
+
+  if (smsBtn) {
+    // Keep the link updated for iOS/Android
+    smsBtn.setAttribute('href', `sms:${smsNumber}?&body=Hi%20Cedric%2C%20`);
+
+    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+    if (!isMobile) {
+      smsBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        try {
+          await navigator.clipboard.writeText(smsNumber);
+          const original = smsBtn.textContent;
+          smsBtn.textContent = 'Number copied!';
+          setTimeout(() => (smsBtn.textContent = original), 1400);
+        } catch {
+          alert('Text: ' + smsNumber);
+        }
+      });
+    }
+  }
+</script>
   </body>
 </html>
