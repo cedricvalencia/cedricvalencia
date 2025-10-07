@@ -89,14 +89,48 @@
       @media (min-width: 640px) {
         .card { grid-template-columns: 1fr auto; align-items: center; }
       }
+      /* Profile photo next to name */
+      header.hero {
+        display: grid;
+        gap: .75rem;
+        align-items: center;
+      }
+      header.hero .headings { display: grid; gap: .5rem; }
+      
+      /* Put photo on the right on wider screens */
+      @media (min-width: 780px) {
+        header.hero { grid-template-columns: 1fr auto; }
+      }
+      
+      /* Circle image with white ring */
+      .pfp { justify-self: end; }
+      .pfp img {
+        display: block;
+        width: 140px;
+        height: 140px;
+        border-radius: 9999px;      /* circle */
+        object-fit: cover;          /* center crop */
+        border: 4px solid #fff;     /* white ring */
+        box-shadow: 0 0 0 2px rgba(255,255,255,.15); /* subtle halo on dark bg */
+      }
+      @media (min-width: 1024px) {
+        .pfp img { width: 160px; height: 160px; }
+      }
     </style>
   </head>
   <body>
     <main class="wrap">
-      <header>
-        <span class="tag">Pasadena • Los Angeles</span>
-        <h1>Cedric Valencia</h1>
-        <p class="meta">Pasadena City College — Economics/Accounting</p>
+      <header class="hero">
+        <div class="headings">
+          <span class="tag">Pasadena • Los Angeles</span>
+          <h1>Cedric Valencia</h1>
+          <p class="meta">Pasadena City College — Economics/Accounting</p>
+        </div>
+      
+        <!-- Profile photo to the right -->
+        <div class="pfp">
+          <img src="./assets/cedric-pfp.jpg" alt="Cedric Valencia" width="160" height="160" loading="lazy" />
+        </div>
       </header>
 
       <section class="card">
