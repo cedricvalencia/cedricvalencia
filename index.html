@@ -120,7 +120,7 @@
       }
     </style>
   </head>
-  <body>
+    <body>
     <main class="wrap">
       <header class="hero">
         <div class="headings">
@@ -131,20 +131,34 @@
       
         <!-- Profile photo to the right -->
         <div class="pfp">
-          <img src="assets/cedric-pfp.png?v=2"
-             alt="Cedric Valencia"
-             width="160"
-             height="160" />
+          <img
+            src="/cedricvalencia/assets/cedric-pfp.png?v=2"
+            alt="Cedric Valencia"
+            width="160"
+            height="160"
+          />
         </div>
+      </header>
 
       <section class="card">
-        <p class="blurb">Hi! I’m a student @ Pasdaena City College focused on accounting. I built this site so you can quickly <strong>download my resume</strong> and find my <strong>LinkedIn</strong>. If you’d like to chat about an internship, project, or have any questions for me, I’d love to have a cup of coffee; I know some amazing cafes.</p>
+        <p class="blurb">
+          Hi! I’m a student @ Pasdaena City College focused on accounting. I built this site so you can quickly
+          <strong>download my resume</strong> and find my <strong>LinkedIn</strong>. If you’d like to chat about an
+          internship, project, or have any questions for me, I’d love to have a cup of coffee; I know some amazing cafes.
+        </p>
         <div class="actions">
-          <!-- TODO: replace the href below with your actual PDF path (e.g., ./assets/Cedric-Valencia-Resume.pdf) -->
-          <a class="btn primary" href="/cedricvalencia/assets/cedric-valencia-resume.pdf" download="Cedric-Valencia-Resume.pdf">Download Resume (PDF)</a>          <a class="btn" href="https://www.linkedin.com/in/cedric-valencia-018967325" target="_blank" rel="noopener">LinkedIn</a>
-          <!-- TODO: replace with your email -->
-          <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=cedric.valenciaa@gmail.com&su=&body=" target="_blank" rel="noopener noreferrer">Email Me</a>
-          <a class="btn" id="sms-btn" href="sms:+16262527663?&body=Hi%20Cedric%2C%20" target="_blank" rel="noopener noreferrer">Text Me</a>
+          <a class="btn primary" href="/cedricvalencia/assets/cedric-valencia-resume.pdf" download="Cedric-Valencia-Resume.pdf">
+            Download Resume (PDF)
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/cedric-valencia-018967325" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+          <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=cedric.valenciaa@gmail.com&su=&body=" target="_blank" rel="noopener noreferrer">
+            Email Me
+          </a>
+          <a class="btn" id="sms-btn" href="sms:+16262527663?&body=Hi%20Cedric%2C%20" target="_blank" rel="noopener noreferrer">
+            Text Me
+          </a>
         </div>
       </section>
 
@@ -154,33 +168,32 @@
     </main>
 
     <script>
-  // Year stamp
-  const y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
+      // Year stamp
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
 
-  // SMS button: opens SMS app on phones; copies number on desktop
-  const smsBtn = document.getElementById('sms-btn');
-  const smsNumber = '+16262527663';
+      // SMS button: opens SMS app on phones; copies number on desktop
+      const smsBtn = document.getElementById('sms-btn');
+      const smsNumber = '+16262527663';
 
-  if (smsBtn) {
-    // Keep the link updated for iOS/Android
-    smsBtn.setAttribute('href', `sms:${smsNumber}?&body=Hi%20Cedric%2C%20`);
+      if (smsBtn) {
+        // Keep the link updated for iOS/Android
+        smsBtn.setAttribute('href', `sms:${smsNumber}?&body=Hi%20Cedric%2C%20`);
 
-    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-    if (!isMobile) {
-      smsBtn.addEventListener('click', async (e) => {
-        e.preventDefault();
-        try {
-          await navigator.clipboard.writeText(smsNumber);
-          const original = smsBtn.textContent;
-          smsBtn.textContent = 'Number copied!';
-          setTimeout(() => (smsBtn.textContent = original), 1400);
-        } catch {
-          alert('Text: ' + smsNumber);
+        const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+        if (!isMobile) {
+          smsBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+              await navigator.clipboard.writeText(smsNumber);
+              const original = smsBtn.textContent;
+              smsBtn.textContent = 'Number copied!';
+              setTimeout(() => (smsBtn.textContent = original), 1400);
+            } catch {
+              alert('Text: ' + smsNumber);
+            }
+          });
         }
-      });
-    }
-  }
-</script>
+      }
+    </script>
   </body>
-</html>
