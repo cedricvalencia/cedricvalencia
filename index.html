@@ -103,14 +103,14 @@
         header.hero { grid-template-columns: 1fr auto; }
       }
 
-      /* CIRCLE CONTAINER (controls size) */
+            /* CIRCLE CONTAINER (controls size) */
       .pfp {
         justify-self: end;
-        width: 175px;     /* ← change this number to adjust size */
+        width: 175px;   /* default size */
         height: 175px;
         border-radius: 50%;
         overflow: hidden;
-        background: #0b0d10;     /* matches background */
+        background: #0b0d10;
         border: 3px solid #111418; /* subtle ring */
       }
       
@@ -120,15 +120,15 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-        border-radius: 0;
         border: none;
+        border-radius: 0;
         box-shadow: none;
       }
       
       /* DESKTOP SIZE */
       @media (min-width: 1024px) {
         .pfp {
-          width: 200px;   /* ← desktop size */
+          width: 200px;   /* bigger on desktop */
           height: 200px;
         }
       }
