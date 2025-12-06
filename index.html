@@ -119,10 +119,19 @@
           width: 200px;
           height: 200px;
           border-radius: 50%;
+          overflow: hidden;          /* hides any uneven edges */
+          background: #0b0d10;       /* same as page background */
+          border: 3px solid #111418; /* optional subtle ring */
+        }
+        
+        /* Image INSIDE the circle */
+        .pfp img {
+          width: 100%;
+          height: 100%;
           object-fit: cover;
-          object-position: center center; /* forces perfect centering */
-          background: #0b0d10; /* fills any transparent edges */
-          border: 3px solid #111418;
+          border-radius: 0;          /* let the container handle the circle */
+          border: 0;
+          box-shadow: none;
         }
       }
     </style>
