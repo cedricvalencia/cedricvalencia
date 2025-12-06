@@ -106,16 +106,19 @@
       /* Circle image */
       .pfp { justify-self: end; }
       .pfp img {
-        display: block;
         width: 175px;
         height: 175px;
         border-radius: 50%;
         object-fit: cover;
-        border: 0;
-        box-shadow: none;
+        border: 3px solid #111418; /* subtle ring to even out background */
+        box-shadow: 0 0 12px rgba(0,0,0,0.4); /* optional, but looks great */
       }
+      
       @media (min-width: 1024px) {
-        .pfp img { width: 200px; height: 200px; }
+        .pfp img {
+          width: 200px;
+          height: 200px;
+        }
       }
     </style>
   </head>
