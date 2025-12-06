@@ -103,40 +103,37 @@
         header.hero { grid-template-columns: 1fr auto; }
       }
 
-      /* Circle image */
-      .pfp { justify-self: end; }
-      .pfp img {
-        width: 175px;
+      /* CIRCLE CONTAINER (controls size) */
+      .pfp {
+        justify-self: end;
+        width: 175px;     /* ← change this number to adjust size */
         height: 175px;
         border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #111418; /* subtle ring to even out background */
-        box-shadow: 0 0 12px rgba(0,0,0,0.4); /* optional, but looks great */
+        overflow: hidden;
+        background: #0b0d10;     /* matches background */
+        border: 3px solid #111418; /* subtle ring */
       }
       
+      /* IMAGE INSIDE CIRCLE */
+      .pfp img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+      }
+      
+      /* DESKTOP SIZE */
       @media (min-width: 1024px) {
-        .pfp img {
-          width: 200px;
+        .pfp {
+          width: 200px;   /* ← desktop size */
           height: 200px;
-          border-radius: 50%;
-          overflow: hidden;          /* hides any uneven edges */
-          background: #0b0d10;       /* same as page background */
-          border: 3px solid #111418; /* optional subtle ring */
-          }
-        
-        /* Image INSIDE the circle */
-        .pfp img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 0;          /* let the container handle the circle */
-          border: 0;
-          box-shadow: none;
         }
       }
-    </style>
-  </head>
-
+          </style>
+        </head>
   <body>
     <main class="wrap">
 
